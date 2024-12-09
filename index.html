@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lern-App</title>
+    <title>Landing Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -14,38 +14,30 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #ffffff;
-        }
-
-        .next-step-link {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 500;
-}
-
-        .worksheet-container {
-            max-width: 90%;
-            width: 800px;
-        }
-
-        .worksheet {
-            width: 100%;
-        }
-
-        .flags {
-            display: flex;
             justify-content: center;
-            margin-top: 10px;
+            min-height: 100vh;
+            background-color: #001f3f; /* Dunkles Blau für Kontrast */
+            font-family: 'Outfit', sans-serif;
+            overflow: hidden;
         }
 
-        .flag {
-            cursor: pointer;
-            margin: 0 10px;
-            width: 40px;
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #ffffff;
+            z-index: 10;
         }
 
-        .next-step-link {
+        .group-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            z-index: 10; /* Über den Schneeflocken */
+        }
+
+        .group-button {
             display: inline-block;
-            margin-top: 20px;
             padding: 10px 20px;
             font-size: 16px;
             text-decoration: none;
@@ -55,29 +47,113 @@
             transition: background-color 0.3s ease;
         }
 
-        .next-step-link:hover {
+        .group-button:hover {
             background-color: #0056b3;
+        }
+
+        /* Schneeflocken */
+        .snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0; /* Hinter allen anderen Elementen */
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -50px;
+            font-size: 12px;
+            color: white;
+            animation: fall 10s linear infinite, sway 5s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+            100% {
+                top: 100vh;
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes sway {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(20px); /* Kleine Seitwärtsbewegung */
+            }
+        }
+
+        /* Zufällige Positionen und Verzögerungen für Schneeflocken */
+        .snowflake:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s, 0s;
+        }
+
+        .snowflake:nth-child(2) {
+            left: 30%;
+            animation-delay: 1s, 2s;
+        }
+
+        .snowflake:nth-child(3) {
+            left: 50%;
+            animation-delay: 2s, 4s;
+        }
+
+        .snowflake:nth-child(4) {
+            left: 70%;
+            animation-delay: 3s, 6s;
+        }
+
+        .snowflake:nth-child(5) {
+            left: 90%;
+            animation-delay: 4s, 8s;
+        }
+
+        .snowflake:nth-child(6) {
+            left: 20%;
+            animation-delay: 5s, 3s;
+        }
+
+        .snowflake:nth-child(7) {
+            left: 40%;
+            animation-delay: 6s, 5s;
+        }
+
+        .snowflake:nth-child(8) {
+            left: 60%;
+            animation-delay: 7s, 1s;
         }
     </style>
 </head>
 <body>
-    <div class="worksheet-container">
-        <img src="Group1_Start.png" alt="Worksheet" class="worksheet">
-    </div>
-    <!-- Flaggen unter dem Bild -->
-    <div class="flags">
-        <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('Click')">
-        <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('Click')">
+    <!-- Schneeflocken -->
+    <div class="snowflakes">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
     </div>
 
-    <!-- Weiterleitungs-Link -->
-    <a href="next_step.html" class="next-step-link">Weiter zur nächsten Aufgabe</a>
-
-    <script>
-        function playSound(language) {
-            const audio = new Audio(language + '.mp3');
-            audio.play();
-        }
-    </script>
+    <h1>Choose your group</h1>
+    <div class="group-buttons">
+        <a href="group1.html" class="group-button">Group 1</a>
+        <a href="group2.html" class="group-button">Group 2</a>
+        <a href="group3.html" class="group-button">Group 3</a>
+        <a href="group4.html" class="group-button">Group 4</a>
+        <a href="group5.html" class="group-button">Group 5</a>
+        <a href="group6.html" class="group-button">Group 6</a>
+    </div>
 </body>
 </html>

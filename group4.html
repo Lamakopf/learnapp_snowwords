@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lern-App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .next-step-link {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .next-step-link:hover {
+            background-color: #0056b3;
+        }
+
+        .worksheet-container {
+            max-width: 90%;
+            width: 100%;
+        }
+
+        .worksheet {
+            width: 100%; /* Passt das Bild an die Breite des Containers an */
+            max-width: 1200px; /* Breitere maximale Breite für das Bild */
+            height: auto; /* Beibehaltung des Seitenverhältnisses */
+        }
+
+        .flags {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .flag {
+            cursor: pointer;
+            margin: 0 10px;
+            width: 60px; /* Vergrößerte Breite der Flaggen */
+            height: auto; /* Beibehaltung des Seitenverhältnisses */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Zurück zum Start Button -->
+    <a href="index.html" class="back-button">Back to the start</a>
+
+    <div class="worksheet-container">
+        <img src="Group4_Start.png" alt="Worksheet" class="worksheet">
+    </div>
+    <!-- Flaggen unter dem Bild -->
+    <div class="flags">
+        <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('Click')">
+        <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('Click')">
+    </div>
+
+    <!-- Weiterleitungs-Link -->
+    <a href="next_step_group4.html" class="next-step-link">Next</a>
+
+    <script>
+        function playSound(language) {
+            const audio = new Audio(language + '.mp3');
+            audio.play();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruppe 2 - Wörter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Outfit', sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .word-list {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .word-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .graphic {
+            width: 200px; /* Breitere Grafiken */
+            height: auto; /* Beibehaltung des Seitenverhältnisses */
+            margin-right: 15px; /* Abstand zwischen Grafik und Flaggen */
+        }
+
+        .flags {
+            display: flex;
+            gap: 10px; /* Abstand zwischen den Flaggen */
+            align-items: center; /* Vertikal zentriert */
+        }
+
+        .flag {
+            cursor: pointer;
+            width: 60px; /* Breite der Flaggen */
+            height: 40px; /* Proportionale Höhe */
+        }
+
+        .next-step-link {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .next-step-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Zurück zum Start Button -->
+    <a href="index.html" class="back-button">Back to the start</a>
+
+    <h1>Help for the worksheet</h1>
+    <ul class="word-list">
+        <li>
+            <img src="snowflake.png" alt="Snowflake" class="graphic">
+            <div class="flags">
+                <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('snowflake-en')">
+                <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('snowflake-de')">
+            </div>
+        </li>
+        <li>
+            <img src="hat.png" alt="Hat" class="graphic">
+            <div class="flags">
+                <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('hat-en')">
+                <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('hat-de')">
+            </div>
+        </li>
+        <li>
+            <img src="sled.png" alt="Sled" class="graphic">
+            <div class="flags">
+                <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('sled-en')">
+                <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('sled-de')">
+            </div>
+        </li>
+        <li>
+            <img src="gloves.png" alt="Gloves" class="graphic">
+            <div class="flags">
+                <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('gloves-en')">
+                <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('gloves-de')">
+            </div>
+        </li>
+        <li>
+            <img src="scarf.png" alt="Scarf" class="graphic">
+            <div class="flags">
+                <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('scarf-en')">
+                <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('scarf-de')">
+            </div>
+        </li>
+        <li>
+            <img src="ice.png" alt="Ice" class="graphic">
+            <div class="flags">
+                <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('ice-en')">
+                <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('ice-de')">
+            </div>
+        </li>
+        <li>
+            <img src="boots.png" alt="Boots" class="graphic">
+            <div class="flags">
+                <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('boots-en')">
+                <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('boots-de')">
+            </div>
+        </li>
+    </ul>
+
+    <!-- Weiterleitungs-Link -->
+    <a href="next_step_group2.html" class="next-step-link">Next</a>
+
+    <script>
+        function playSound(sound) {
+            const audio = new Audio(sound + '.mp3');
+            audio.play();
+        }
+    </script>
+</body>
+</html>
