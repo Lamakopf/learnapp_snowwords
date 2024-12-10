@@ -65,19 +65,33 @@
             height: auto; /* Beibehaltung des Seitenverhältnisses */
         }
 
+
         .flags {
             display: flex;
             justify-content: center;
             margin-top: 10px;
+            gap: 20px; /* Abstand zwischen den Flaggen */
+            align-items: center;
+        }
+
+        .flag-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
         }
 
         .flag {
             cursor: pointer;
-            margin: 0 10px;
             width: 60px; /* Vergrößerte Breite der Flaggen */
             height: auto; /* Beibehaltung des Seitenverhältnisses */
         }
 
+        .icon {
+            width: 20px;
+            height: auto;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -89,8 +103,14 @@
     </div>
     <!-- Flaggen unter dem Bild -->
     <div class="flags">
-        <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('Click')">
-        <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('Click')">
+        <div class="flag-container">
+            <img src="UK.svg" alt="UK Flag" class="flag" onclick="playSound('Group1_Task')">
+            <img src="headset.svg" alt="Play UK Sound" class="icon" onclick="playSound('Group1_Task')">
+        </div>
+        <div class="flag-container">
+            <img src="Germany.svg" alt="German Flag" class="flag" onclick="playSound('Click')">
+            <img src="headset.svg" alt="Play German Sound" class="icon" onclick="playSound('Click')">
+        </div>
     </div>
 
     <!-- Weiterleitungs-Link -->
